@@ -54,7 +54,6 @@ export default function NotesClient() {
 
   return (
     <section className="space-y-4">
-      {/* Title + Manage button inline */}
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-3xl font-bold text-primary leading-none">My Notes</h2>
         <button
@@ -69,7 +68,7 @@ export default function NotesClient() {
         </button>
       </div>
 
-      {/* Notes list */}
+
       <ul className="space-y-3">
         {notes.map((note) => (
           <li
