@@ -3,9 +3,21 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 
-export default function TodoClient() {
+// define the todo type
+type Todo = {
+  id: number
+  title: string
+  completed: boolean
+}
+
+// define props type for server-provided todos
+interface TodoClientProps {
+  initialTodos: Todo[]
+}
+
+export default function TodoClient({ initialTodos }: TodoClientProps) {
   const supabase = createClient()
-  const [todos, setTodos] = useState<{ id: number; title: string; completed: boolean }[]>([])
+  const [todos, setTodos] = useState<Todo[]>(initialTodos)
   const [newTodo, setNewTodo] = useState('')
   const [editingId, setEditingId] = useState<number | null>(null)
   const [editingTitle, setEditingTitle] = useState('')

@@ -3,9 +3,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 
-export default function NotesClient() {
+export default function NotesClient({ initialNotes }: { initialNotes: { id: number; title: string }[] }) {
   const supabase = createClient()
-  const [notes, setNotes] = useState<{ id: number; title: string }[]>([])
+  const [notes, setNotes] = useState<{ id: number; title: string }[]>(initialNotes)
   const [newNote, setNewNote] = useState('')
   const [manageMode, setManageMode] = useState(false)
   const [editingId, setEditingId] = useState<number | null>(null)
