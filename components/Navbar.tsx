@@ -1,14 +1,15 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const pathname = usePathname()
 
   const navItems = [
-    { name: "Notes", href: "/notes" },
-    { name: "Todos", href: "/todos" },
+    { name: 'Notes', href: '/notes' },
+    { name: 'Todos', href: '/todos' },
+    { name: 'Groceries', href: '/groceries' },
   ]
 
   return (
@@ -22,8 +23,8 @@ export default function Navbar() {
               href={item.href}
               className={`text-lg font-medium transition-colors duration-200 ${
                 isActive
-                  ? "text-blue-400 border-b-2 border-blue-500 pb-1"
-                  : "text-gray-300 hover:text-blue-400"
+                  ? 'text-blue-400 border-b-2 border-blue-500 pb-1'
+                  : 'text-gray-300 hover:text-blue-400'
               }`}
             >
               {item.name}
