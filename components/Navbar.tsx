@@ -7,11 +7,11 @@ export default function Navbar() {
   const pathname = usePathname()
 
   const navItems = [
-
     { name: 'Notes', href: '/notes' },
     { name: 'Todos', href: '/todos' },
     { name: 'Groceries', href: '/groceries' },
     { name: 'Form', href: '/form' },
+    { name: 'Unsplash API', href: '/unsplash' },
   ]
 
   return (
